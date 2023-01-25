@@ -52,6 +52,30 @@
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
     padding: 2%;
 }
+
+.gh-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    transition: width 2s, height 2s;
+}
+
+.gh-icon {
+    color: red;
+    background-color: rgb(244, 244, 244);
+    border-radius: 25px;
+    height: 170px;
+    width: 170px;
+    box-shadow: 2px 2px 5px rgb(159, 159, 159);
+}
+
+.gh-icon:hover {
+    background-color: rgb(233, 233, 233);
+    height: 200px;
+    width: 200px;
+}
+
 .addProjectContainer{
     display: flex;
     height: 80%;
