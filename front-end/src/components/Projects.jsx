@@ -47,18 +47,11 @@ function Projects (props) {
             projectsList.push(<ProjectEntry repo={projects.projects[i][key]} username={key}/>)
         }
     }
-
-    function logout(){
-        document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        let path = `/`; 
-        navigate('/login')
-    }
     
     return (
         <div className="pageContainer">
             <div className="addProjectButtonContainer">
                 <button className='addProjectButton' onClick={()=>routeChange()}>Add Project</button>
-                <button className="logoutButton" onClick={logout}>Logout</button>
             </div>
             {projectsList}
         </div>
