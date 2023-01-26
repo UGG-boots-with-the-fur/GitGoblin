@@ -43,13 +43,20 @@ function AddProject () {
         .catch((err) => console.log(err))
     }
 
+    function cancel(){
+        navigate('/');
+    }
+
     return (
     <div className='pageContainer'>
-        <div className='addProjectContainer'>
-            <div class="addProjectRow">
-                <label>Project name : </label>
-                <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
-                <button className="addProjectButton" onClick={()=>submitProject(project.name)}>Add Project</button>
+        <div className='add-project-wrapper'>
+            <div className='addProjectContainer'>
+                <div class="addProjectRow">
+                    <label>Project name : </label>
+                    <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
+                    <button className="addProjectButton" onClick={()=>submitProject(project.name)}>Add Project</button>
+                    <button className="logoutButton" onClick={cancel}>cancel</button>
+                </div>
             </div>
         </div>
     </div>
