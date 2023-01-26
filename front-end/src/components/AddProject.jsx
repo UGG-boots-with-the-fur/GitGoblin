@@ -53,8 +53,9 @@ function AddProject () {
             <div className='addProjectContainer'>
                 <div class="addProjectRow">
                     <label>Project name : </label>
+                    <input className="addProjectInput" type="text" placeholder='Repository Owner' onChange={(e) => updateOwner(e.target.value)}/>
                     <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
-                    <button className="addProjectButton" onClick={()=>submitProject(project.name)}>Add Project</button>
+                    <button className="addProjectButton" onClick={submitProject}>Add Project</button>
                     <button className="logoutButton" onClick={cancel}>cancel</button>
                 </div>
             </div>
