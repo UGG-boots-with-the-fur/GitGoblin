@@ -14,8 +14,8 @@ function AddProject () {
 
     let navigate = useNavigate();
 
-    const routeChange = () =>{ 
-        let path = `/`; 
+    const routeChange = () =>{
+        let path = `/`;
         navigate(path, {state: {username: location.state.username}});
       }
 
@@ -56,6 +56,9 @@ function AddProject () {
 
     return (
     <div className='pageContainer'>
+        <div className='navBar'>
+            <a onClick={()=> navigate('/')}>GitGoblin</a>
+        </div>
         <div className='add-project-wrapper'>
             <div className='addProjectContainer'>
                 <div class="addProjectRow">
@@ -63,7 +66,7 @@ function AddProject () {
                     <input className="addProjectInput" type="text" placeholder='Repository Owner' onChange={(e) => updateOwner(e.target.value)}/>
                     <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
                     <button className="addProjectButton" onClick={submitProject}>Add Project</button>
-                    <button className="logoutButton" onClick={cancel}>cancel</button>
+                    <button className="cancelButton" onClick={cancel}>cancel</button>
                 </div>
             </div>
         </div>

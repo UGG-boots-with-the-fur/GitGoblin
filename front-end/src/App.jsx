@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useNavigate, Navigate, Outlet } from "rea
 import Login from './components/Login.jsx'
 import Projects from './components/Projects.jsx'
 import AddProject from './components/AddProject.jsx'
+import Navbar from './components/Navbar.jsx'
 
 const PrivateRoutes = (props) => {
     let sessionCookie = props.cookie;
@@ -53,6 +54,7 @@ export default function App() {
 
     return (
         <>
+            <Navbar/>
             {isLoading ? <div>Loading...</div> :
             <Routes>
                 <Route element = {<PrivateRoutes cookie = {sessionCookie}/>}>
