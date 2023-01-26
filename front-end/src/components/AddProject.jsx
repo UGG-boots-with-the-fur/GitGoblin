@@ -26,10 +26,10 @@ function AddProject () {
     }
 
     function updateOwner(name){
-      let newState = Object.assign({}, project);
-      newState.owner = name;
-      setProject(newState)
-  }
+        let newState = Object.assign({}, project);
+        newState.owner = name;
+        setProject(newState)
+    }
 
     function submitProject(name){
         fetch('http://localhost:3088/addproject', {
@@ -50,14 +50,21 @@ function AddProject () {
         .catch((err) => console.log(err))
     }
 
+    function cancel(){
+        navigate('/');
+    }
+
     return (
     <div className='pageContainer'>
-        <div className='addProjectContainer'>
-            <div class="addProjectRow">
-                <label>Project name : </label>
-                <input className="addProjectInput" type="text" placeholder='Repository Owner' onChange={(e) => updateOwner(e.target.value)}/>
-                <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
-                <button className="addProjectButton" onClick={submitProject}>Add Project</button>
+        <div className='add-project-wrapper'>
+            <div className='addProjectContainer'>
+                <div class="addProjectRow">
+                    <label>Project name : </label>
+                    <input className="addProjectInput" type="text" placeholder='Repository Owner' onChange={(e) => updateOwner(e.target.value)}/>
+                    <input className="addProjectInput" type="text" placeholder='Repository Name' onChange={(e) => updateName(e.target.value)}/>
+                    <button className="addProjectButton" onClick={submitProject}>Add Project</button>
+                    <button className="logoutButton" onClick={cancel}>cancel</button>
+                </div>
             </div>
         </div>
     </div>
