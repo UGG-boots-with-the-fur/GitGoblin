@@ -7,6 +7,7 @@ function AddProject () {
 
     const [project, setProject] = useState({
         name: '',
+        owner: ''
     });
 
     const location = useLocation();
@@ -24,6 +25,12 @@ function AddProject () {
         setProject(newState)
     }
 
+    function updateOwner(name){
+        let newState = Object.assign({}, project);
+        newState.owner = name;
+        setProject(newState)
+    }
+
     function submitProject(name){
         fetch('http://localhost:3088/addproject', {
         method: 'POST',
@@ -31,7 +38,7 @@ function AddProject () {
             'Accept': '*/*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username: location.state.username, repo: project.name })
+        body: JSON.stringify({ username: location.state.username, owner: project.owner, repo: project.name })
         })
         .then((data) => data.json())
         .then((data) => {
